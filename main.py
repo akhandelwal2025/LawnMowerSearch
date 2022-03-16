@@ -14,10 +14,14 @@ obstacles2 = [
 ]
 
 def main():
-    poly_points = td.create_polygon_points(obstacles1)
+    obstacles = obstacles1
+    poly_points = td.create_sorted_polygon_points(obstacles)
     #for pt in poly_points:
     #    print(str(pt.x) + "  " + str(pt.y))
-    visualizer.graph_obstacles(obstacles1)
-
+    visualizer.graph_obstacles(obstacles)
+    for poly_pt in poly_points:
+        td.calc_exts(poly_pt, obstacles)
+    visualizer.graph_edges(poly_points)
+    
 if __name__ == '__main__':
     main()
