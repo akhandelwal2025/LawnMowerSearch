@@ -1,2 +1,0 @@
-from PolygonPoint import PolygonPoint
-
