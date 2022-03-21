@@ -45,17 +45,12 @@ def calc_exts(poly_pt, obstacles):
                 min_lower = lower_intersect
         poly_pt.lower_ext = min_lower
 
-def set_type(poly_pt, sorted_obs):
-    if(poly_pt.obs_idx == len(sorted_obs)-1):
-        poly_pt.type = poly_pt.BOUNDARY
-    else:
-        obstacle = sorted_obs[poly_pt.obs_idx]
-        if obstacle[0][0] == poly_pt.x:
-            poly_pt.type = poly_pt.IN
-        elif obstacle[-1][0] == poly_pt.x:
-            poly_pt.type = poly_pt.OUT
-        else:
-            poly_pt.type = poly_pt.MIDDLE
+def set_type(poly_pt, obstacles):
+    #TODO this should be changed
+    #IN = if both adj points have > x-coord
+    #MID = if one point has < x-coord and other has > x-coord
+    #OUT = if both adj points have < x-coord
+    
 
 def ccw(A, B, C):
     return (C[1]-A[1])*(B[0]-A[0]) < (B[1]-A[1])*(C[0]-A[0])
