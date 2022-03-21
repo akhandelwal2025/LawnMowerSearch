@@ -19,7 +19,12 @@ def graph_edges(poly_points):
         if pt.lower_ext >= 0:
             y_list = [pt.y, pt.lower_ext]
             plt.plot(x_list, y_list, color="blue")
-    plt.show()
+    
+
+def graph_line():
+    x_list = [294, 436]
+    y_list = [69, 399]
+    plt.plot(x_list, y_list, color="black")
     
             
 
