@@ -25,10 +25,10 @@ def main():
     obstacles = obstacles1
     #sorted_obs = sort_obstacles(obstacles)
     poly_points = td.create_sorted_polygon_points(obstacles)
-
     for idx, poly_pt in enumerate(poly_points):
         td.calc_exts(poly_pt, obstacles)
         td.set_type(poly_pt, obstacles)
+        #print(poly_pt.x, poly_pt.y, poly_pt.type, poly_pt.obs_idx_tup)
         td.calc_visibility(poly_pt, poly_points, idx, obstacles)
         print(poly_pt.x, poly_pt.y, poly_pt.type, [(pt.x, pt.y)for pt in poly_pt.visible])
     visualizer.graph_obstacles(obstacles)
